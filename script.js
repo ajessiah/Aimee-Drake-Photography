@@ -80,6 +80,7 @@ const toPortfolio = () => {
                 `;
             });
             content.style.height = "fit-content";
+            content.style.paddingBottom = "25px";
         })
         .catch(error => {
             console.error('Error loading the text file:', error);
