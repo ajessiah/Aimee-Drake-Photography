@@ -11,6 +11,7 @@ const hamMenu = document.getElementById('menu-overlay');
 const hamHome = document.getElementById('ham-home-btn');
 const hamAbout = document.getElementById('ham-about-btn');
 const hamPortfolio = document.getElementById('ham-portfolio-btn');
+const header = document.getElementById('header-div');
 
 const allImgs = ["Photos/nature.jpg", "Photos/nature2.jpg", "Photos/nature3.jpg", "Photos/nature4.jpg", "Photos/nature5.jpg", "Photos/nature6.jpg"];
 
@@ -80,6 +81,9 @@ const popPortfolio = () => {
 };
 
 const toPortfolio = () => {
+    header.style.position = "fixed";
+    hamMenu.style.position = "fixed";
+    hamMenu.style.marginTop = "20vh";
     content.classList.add('loading');
     fetch("Pages/portfolio.txt")
         .then(response => {
@@ -101,6 +105,7 @@ const toPortfolio = () => {
                     `;
                 });
                 content.style.height = "fit-content";
+                content.style.paddingTop = "20vh";
                 content.style.paddingBottom = "25px";
                 content.classList.remove('loading');
             }, 200);
