@@ -8,29 +8,32 @@
         height: 20vh;
         width: 100vw;
         margin: 0;
+        overflow: hidden;
     }
 
     #site-title {
         flex-flow: row nowrap;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         height: 20vh;
         width: 100vw;
         display: flex;
         background-color: black;
         box-shadow: 0 4px 15px #9fa898;
         color: white;
+        margin: 0 auto;
+        padding: 0 20px 0 20px;
     }
 
     #logo-container {
         display: flex;
-        width: 100%;
+        width: 70vw;
         height: 16vh;
-        padding: 5px 5px 5px 20px;
+        margin: 0;
     }
 
     #logo-container img {
-    object-fit: contain;  
+        object-fit: fill;
     }
 
     #hamburger-btn {
@@ -39,10 +42,10 @@
         width: fit-content;
         background: none;
         border: none;
-        margin: 0 auto;
+        margin: 0;
         color: white;
         cursor: pointer;
-        padding-right: 15px;
+        padding: 0;
     }
 
     #to-instagram {
