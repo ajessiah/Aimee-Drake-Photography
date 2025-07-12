@@ -7,7 +7,7 @@ const ratesBtn = document.getElementById('rates-btn');
 const contactBtn = document.getElementById('contact-btn');
 const portfolioDiv = document.getElementById('portfolio-container');
 
-const allImgs = ["nature.jpg", "nature2.jpg", "nature3.jpg", "nature4.jpg", "nature5.jpg", "nature6.jpg"];
+const allImgs = ["Photos/nature.jpg", "Photos/nature2.jpg", "Photos/nature3.jpg", "Photos/nature4.jpg", "Photos/nature5.jpg", "Photos/nature6.jpg"];
 
 const toHome = () => {
     fetch("Pages/home.txt")
