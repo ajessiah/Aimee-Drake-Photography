@@ -39,9 +39,10 @@
         width: fit-content;
         background: none;
         border: none;
+        margin: 0 auto;
         color: white;
         cursor: pointer;
-        padding: 10px 25px 10px 10px;
+        padding: 10px;
     }
 
     #to-instagram {
