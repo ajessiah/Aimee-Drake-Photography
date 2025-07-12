@@ -15,6 +15,7 @@ const hamPortfolio = document.getElementById('ham-portfolio-btn');
 const allImgs = ["Photos/nature.jpg", "Photos/nature2.jpg", "Photos/nature3.jpg", "Photos/nature4.jpg", "Photos/nature5.jpg", "Photos/nature6.jpg"];
 
 const toHome = () => {
+    content.classList.add('loading');
     fetch("Pages/home.txt")
         .then(response => {
             if (!response.ok) {
@@ -23,11 +24,13 @@ const toHome = () => {
             return response.text();
         })
         .then(data => {
+            setTimeout(() => {
             content.className = 'home';
             content.innerHTML = data;
-
             content.style.height = "80vh";
             content.style.paddingBottom = "none";
+            content.classList.remove('loading');
+            }, 200);
         })
         .catch(error => {
             console.error('Error loading the text file:', error);
@@ -41,6 +44,7 @@ hamHome.addEventListener("click", toHome);
 
 
 const toAbout = () => {
+    content.classList.add('loading');
     fetch("Pages/about.txt")
         .then(response => {
             if (!response.ok) {
@@ -49,11 +53,13 @@ const toAbout = () => {
             return response.text();
         })
         .then(data => {
-            content.className = 'about';
-            content.innerHTML = data;
-
+            setTimeout(() => {
             content.style.height = "80vh";
             content.style.paddingBottom = "none";
+            content.className = 'about';
+            content.innerHTML = data;
+            content.classList.remove('loading');
+            }, 200);
         })
         .catch(error => {
             console.error('Error loading the text file:', error);
@@ -74,6 +80,7 @@ const popPortfolio = () => {
 };
 
 const toPortfolio = () => {
+    content.classList.add('loading');
     fetch("Pages/portfolio.txt")
         .then(response => {
             if (!response.ok) {
@@ -82,19 +89,21 @@ const toPortfolio = () => {
             return response.text();
         })
         .then(data => {
-            content.className = 'portfolio';
-            content.innerHTML = data;
-
-            const portfolioDiv = document.getElementById('portfolio-container');
-            allImgs.forEach((img) => {
-                portfolioDiv.innerHTML += `
-                    <div id="${img}" class="img-container">
-                        <img src="${img}" class="portfolio-img">
-                    </div>
-                `;
-            });
-            content.style.height = "fit-content";
-            content.style.paddingBottom = "25px";
+            setTimeout(() => {
+                content.className = 'portfolio';
+                content.innerHTML = data;
+                const portfolioDiv = document.getElementById('portfolio-container');
+                allImgs.forEach((img) => {
+                    portfolioDiv.innerHTML += `
+                        <div id="${img}" class="img-container">
+                            <img src="${img}" class="portfolio-img">
+                        </div>
+                    `;
+                });
+                content.style.height = "fit-content";
+                content.style.paddingBottom = "25px";
+                content.classList.remove('loading');
+            }, 200);
         })
         .catch(error => {
             console.error('Error loading the text file:', error);

@@ -373,20 +373,30 @@ html, body {
     overflow-x: hidden;
 }
 
+body {
+    background-color: black;
+}
+
 body::-webkit-scrollbar {
     width: 0;
     height: 0;
 }
 
+#page-content {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#page-content.loading {
+  opacity: 0;
+}
+
 #menu-overlay {
     display: none;
-    transition: transform 0.3s ease-in-out;
-    transform: translateX(100%);
 }
 
 #menu-overlay.active {
   display: flex;
-  transform: translateX(0);
 }
 
 /*
