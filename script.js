@@ -6,6 +6,11 @@ const portfolioBtn = document.getElementById('portfolio-btn');
 const ratesBtn = document.getElementById('rates-btn');
 const contactBtn = document.getElementById('contact-btn');
 const portfolioDiv = document.getElementById('portfolio-container');
+const hamMenuBtn = document.getElementById('hamburger-btn');
+const hamMenu = document.getElementById('menu-overlay');
+const hamHome = document.getElementById('ham-home-btn');
+const hamAbout = document.getElementById('ham-about-btn');
+const hamPortfolio = document.getElementById('ham-portfolio-btn');
 
 const allImgs = ["Photos/nature.jpg", "Photos/nature2.jpg", "Photos/nature3.jpg", "Photos/nature4.jpg", "Photos/nature5.jpg", "Photos/nature6.jpg"];
 
@@ -20,6 +25,9 @@ const toHome = () => {
         .then(data => {
             content.className = 'home';
             content.innerHTML = data;
+
+            content.style.height = "80vh";
+            content.style.paddingBottom = "none";
         })
         .catch(error => {
             console.error('Error loading the text file:', error);
@@ -29,6 +37,8 @@ const toHome = () => {
 window.onload = toHome;
 homeBtn.addEventListener("click", toHome);
 logoDiv.addEventListener("click", toHome);
+hamHome.addEventListener("click", toHome);
+
 
 const toAbout = () => {
     fetch("Pages/about.txt")
@@ -41,6 +51,9 @@ const toAbout = () => {
         .then(data => {
             content.className = 'about';
             content.innerHTML = data;
+
+            content.style.height = "80vh";
+            content.style.paddingBottom = "none";
         })
         .catch(error => {
             console.error('Error loading the text file:', error);
@@ -48,6 +61,7 @@ const toAbout = () => {
 };
 
 aboutBtn.addEventListener("click", toAbout);
+hamAbout.addEventListener("click", toAbout);
 
 const popPortfolio = () => {
     allImgs.forEach((img) => {
@@ -86,5 +100,20 @@ const toPortfolio = () => {
             console.error('Error loading the text file:', error);
         });
 };
+
 portfolioBtn.addEventListener("click", toPortfolio);
+hamPortfolio.addEventListener("click", toPortfolio);
+
+hamMenuBtn.addEventListener("click", () => {
+  hamMenu.classList.toggle("active");
+});
+
+const overlayButtons = document.querySelectorAll(".overlay-btns");
+
+overlayButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    hamMenu.classList.remove("active");
+  });
+});
+
 

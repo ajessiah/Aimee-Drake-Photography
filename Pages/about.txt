@@ -1,4 +1,5 @@
-       <div id="page-title">
+
+<div id="page-title">
             <p>ABOUT ME</p>
 	    <div class="underline"></div>
         </div>

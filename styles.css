@@ -62,6 +62,58 @@
         width: 100%;
     }
 
+    #menu-overlay {
+        height: 50vh;
+        width: 85%;
+        position: absolute;
+        right: 0;
+        background-color: #000000e8;
+        margin: 0;
+        padding-right: 25px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        box-shadow:  0 0 50px 25px #00000099;
+        z-index: 3;
+        
+    }
+
+    #menu-overlay ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        z-index: 4;
+        position: relative;
+    }
+
+    .overlay-btns {
+        width: 100%;
+        text-align: right;
+        height: 8vh;
+        font-size: 1.2rem;
+        color: whitesmoke;
+        background: none;
+        border: none;
+        border-bottom: 3px solid #ece8e88c;
+        margin: 0;
+        letter-spacing: 2px;
+        position: relative;
+    }
+
+    .overlay-btns:hover {
+        background-color: whitesmoke;
+        color: black;
+    }
+
+    #ham-to-instagram {
+        width: fit-content;
+        background: none;
+        border: none;
+        align-self: flex-end;
+        color: white;
+        margin: auto 0;
+    }
+
     /* HOME */
     #slideshow-div {
         width: 100%;
@@ -73,6 +125,7 @@
         height: 100%;
         width: 100%;
         object-fit: cover;
+        z-index: 1;
     }
 
     .vignette-overlay {
@@ -216,6 +269,7 @@
         display: none;
     }
 
+
     #to-instagram {
         width: fit-content;
         padding-right: 50px;
@@ -252,6 +306,10 @@
         width: 140px;
         border: none;
         background: none;
+    }
+
+    #menu-overlay {
+        display: none;
     }
 
     .home {
@@ -312,11 +370,23 @@ html, body {
     height: 100%;
     padding: 0;
     margin: 0;
+    overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
-  width: 0;
-  height: 0;
+    width: 0;
+    height: 0;
+}
+
+#menu-overlay {
+    display: none;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+#menu-overlay.active {
+  display: flex;
+  transform: translateX(0);
 }
 
 /*
