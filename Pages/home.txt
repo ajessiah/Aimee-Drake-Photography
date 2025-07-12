@@ -1,0 +1,13 @@
+<div id="slideshow-div">
+  <div class="vignette-overlay"></div>
+  <img src="Photos/nature.jpg" alt="stock nature photo">
+</div>
+<div id='licensing'>
+  <p>
+    All photos on this site are © AD Photography. 
+    Unauthorized use, copying, or distribution is prohibited. 
+    <br>
+    Licensing or permission is required for any use beyond viewing. 
+    For inquiries, contact admin@adphotography.com
+  </p>
+</div>
