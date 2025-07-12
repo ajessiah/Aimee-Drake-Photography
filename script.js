@@ -26,7 +26,7 @@ const toHome = () => {
         });
 };
 
-window.onload = toHome;
+// window.onload = toHome;
 homeBtn.addEventListener("click", toHome);
 logoDiv.addEventListener("click", toHome);
 
@@ -79,11 +79,12 @@ const toPortfolio = () => {
                     </div>
                 `;
             });
+            content.style.height = "fit-content";
         })
         .catch(error => {
             console.error('Error loading the text file:', error);
         });
 };
-
+toPortfolio();
 portfolioBtn.addEventListener("click", toPortfolio);
 
